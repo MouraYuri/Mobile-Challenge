@@ -9,19 +9,28 @@ import UIKit
 
 class SpotlightView: UIView {
     
-    var spotlights: [Spotlight] = []
+    var spotlights: [Spotlight] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
     
     lazy var collectionView: UICollectionView = { [unowned self] in
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: 20, height: 20)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width*0.8, height: UIScreen.main.bounds.height*0.3)
         layout.scrollDirection = .horizontal
         
         let obj = UICollectionView(frame: self.frame, collectionViewLayout: layout)
+        obj.showsHorizontalScrollIndicator = false
+        obj.automaticallyAdjustsScrollIndicatorInsets = false
         obj.delegate = self
         obj.dataSource = self
         obj.register(FullImageCollectionViewCell.self, forCellWithReuseIdentifier: FullImageCollectionViewCell.identifier)
         obj.translatesAutoresizingMaskIntoConstraints = false
+        obj.backgroundColor = .clear
         return obj
     }()
     
@@ -35,7 +44,7 @@ class SpotlightView: UIView {
         self.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
-            self.collectionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.8),
+            self.collectionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.9),
             self.collectionView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9),
             self.collectionView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.collectionView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
@@ -47,12 +56,16 @@ class SpotlightView: UIView {
 
 extension SpotlightView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return spotlights.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: FullImageCollectionViewCell.identifier, for: indexPath)
-        return cell
+        if let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: FullImageCollectionViewCell.identifier, for: indexPath) as? FullImageCollectionViewCell {
+            let spotlight = self.spotlights[indexPath.row]
+            cell.config(imageURL: spotlight.bannerURL)
+            return cell
+        }
+        return UICollectionViewCell()
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -14,12 +14,15 @@ class FullImageCollectionViewCell: UICollectionViewCell {
     
     lazy var cellImageView: UIImageView = {
         let obj = UIImageView()
+        obj.layer.masksToBounds = true
+        obj.layer.cornerRadius = 12
         obj.translatesAutoresizingMaskIntoConstraints = false
         return obj
     }()
     
     override func didMoveToSuperview() {
-        
+        self.setupConstraints()
+        self.backgroundColor = .clear
     }
     
     func config(imageURL: String) {

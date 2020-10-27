@@ -7,9 +7,9 @@
 
 import Foundation
 struct Spotlight {
-    let name: String?
-    let bannerURL: String?
-    let description: String?
+    let name: String
+    let bannerURL: String
+    let description: String
     
     init(_ dict: [String:Any]) {
         self.name = dict["name"] as? String ?? "Not Defined"

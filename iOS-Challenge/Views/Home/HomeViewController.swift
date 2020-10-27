@@ -11,8 +11,21 @@ class HomeViewController: UIViewController {
     
     let viewModel = HomeViewModel()
     
+    lazy var userNameLabel: UILabel = {
+        let obj = UILabel()
+        obj.translatesAutoresizingMaskIntoConstraints = false
+        obj.text = "Olá, Maria"
+        return UILabel()
+    }()
+    
     lazy var spotlightView: SpotlightView = {
         let obj = SpotlightView()
+        obj.translatesAutoresizingMaskIntoConstraints = false
+        return obj
+    }()
+    
+    lazy var centerView: HomeCenterView = {
+        let obj = HomeCenterView()
         obj.translatesAutoresizingMaskIntoConstraints = false
         return obj
     }()
@@ -31,13 +44,24 @@ class HomeViewController: UIViewController {
     }
     
     func setupConstraints(){
-        self.view.addSubview(spotlightView)
+        self.view.addSubview(self.userNameLabel)
+        self.view.addSubview(self.spotlightView)
+        self.view.addSubview(self.centerView)
+        
+        let viewsWidthMultiplier = CGFloat(0.95)
         
         NSLayoutConstraint.activate([
             self.spotlightView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            self.spotlightView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.35),
-            self.spotlightView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.95),
+            self.spotlightView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.38),
+            self.spotlightView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: viewsWidthMultiplier),
             self.spotlightView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            self.centerView.topAnchor.constraint(equalTo: self.spotlightView.bottomAnchor, constant: 8),
+            self.centerView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
+            self.centerView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: viewsWidthMultiplier),
+            self.centerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
     }
 
@@ -45,7 +69,9 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeViewModelDelegate {
     func didFinishFetching(data: [String : [Any]]) {
-        
+        if let spotlights = data["spotlights"] as? [Spotlight] {
+            self.spotlightView.spotlights = spotlights
+        }
     }
     
     
