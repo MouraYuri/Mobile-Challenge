@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A001522925484D63004057D5 /* HeaderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001522825484D63004057D5 /* HeaderHomeView.swift */; };
 		A01C181D254794920046F073 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C181C254794920046F073 /* Services.swift */; };
 		A01C18252547A1320046F073 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C18242547A1320046F073 /* HomeViewModel.swift */; };
 		A01C182A2547B03D0046F073 /* Spotlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C18292547B03D0046F073 /* Spotlight.swift */; };
@@ -54,6 +55,7 @@
 		8BF3881FE58A86EF72F25D09 /* Pods-iOS-ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-ChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-ChallengeTests/Pods-iOS-ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8EC8EFEA1496593FDA79FC5C /* Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8F251F8784F7AC829EA728E8 /* Pods-iOS-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge/Pods-iOS-Challenge.release.xcconfig"; sourceTree = "<group>"; };
+		A001522825484D63004057D5 /* HeaderHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderHomeView.swift; sourceTree = "<group>"; };
 		A01C181C254794920046F073 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		A01C18242547A1320046F073 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A01C18292547B03D0046F073 /* Spotlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotlight.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				A01C18392547BEE10046F073 /* SpotlightView.swift */,
 				A01C18462547D1C80046F073 /* HomeCenterView.swift */,
 				A01C184B2547DE5E0046F073 /* ProductsView.swift */,
+				A001522825484D63004057D5 /* HeaderHomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				A01C184C2547DE5E0046F073 /* ProductsView.swift in Sources */,
 				A01C18252547A1320046F073 /* HomeViewModel.swift in Sources */,
 				A0508B9F25479063005B7B78 /* HomeViewController.swift in Sources */,
+				A001522925484D63004057D5 /* HeaderHomeView.swift in Sources */,
 				A01C182F2547B6A60046F073 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

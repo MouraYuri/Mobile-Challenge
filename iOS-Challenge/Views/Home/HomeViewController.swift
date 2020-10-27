@@ -11,11 +11,10 @@ class HomeViewController: UIViewController {
     
     let viewModel = HomeViewModel()
     
-    lazy var userNameLabel: UILabel = {
-        let obj = UILabel()
+    lazy var header: HeaderHomeView = {
+        let obj = HeaderHomeView()
         obj.translatesAutoresizingMaskIntoConstraints = false
-        obj.text = "Olá, Maria"
-        return UILabel()
+        return obj
     }()
     
     lazy var spotlightView: SpotlightView = {
@@ -42,6 +41,8 @@ class HomeViewController: UIViewController {
         self.view.backgroundColor = .white
         
         self.viewModel.delegate = self
+        
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +51,7 @@ class HomeViewController: UIViewController {
     }
     
     func setupConstraints(){
-        self.view.addSubview(self.userNameLabel)
+        self.view.addSubview(self.header)
         self.view.addSubview(self.spotlightView)
         self.view.addSubview(self.centerView)
         self.view.addSubview(self.productsView)
@@ -58,7 +59,14 @@ class HomeViewController: UIViewController {
         let viewsWidthMultiplier = CGFloat(1.0)
         
         NSLayoutConstraint.activate([
-            self.spotlightView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.header.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.header.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.05),
+            self.header.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: viewsWidthMultiplier),
+            self.header.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            self.spotlightView.topAnchor.constraint(equalTo: self.header.bottomAnchor),
             self.spotlightView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3),
             self.spotlightView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: viewsWidthMultiplier),
             self.spotlightView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
@@ -66,7 +74,7 @@ class HomeViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             self.centerView.topAnchor.constraint(equalTo: self.spotlightView.bottomAnchor, constant: 8),
-            self.centerView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25),
+            self.centerView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3),
             self.centerView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: viewsWidthMultiplier),
             self.centerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
