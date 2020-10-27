@@ -29,6 +29,12 @@ class HomeViewController: UIViewController {
         obj.translatesAutoresizingMaskIntoConstraints = false
         return obj
     }()
+    
+    lazy var productsView: ProductsView = {
+        let obj = ProductsView()
+        obj.translatesAutoresizingMaskIntoConstraints = false
+        return obj
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +53,7 @@ class HomeViewController: UIViewController {
         self.view.addSubview(self.userNameLabel)
         self.view.addSubview(self.spotlightView)
         self.view.addSubview(self.centerView)
+        self.view.addSubview(self.productsView)
         
         let viewsWidthMultiplier = CGFloat(0.95)
         
@@ -63,6 +70,13 @@ class HomeViewController: UIViewController {
             self.centerView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: viewsWidthMultiplier),
             self.centerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
+        
+        NSLayoutConstraint.activate([
+            self.productsView.topAnchor.constraint(equalTo: self.centerView.bottomAnchor, constant: 8),
+            self.productsView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.productsView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: viewsWidthMultiplier),
+            self.productsView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+        ])
     }
 
 }
@@ -75,6 +89,10 @@ extension HomeViewController: HomeViewModelDelegate {
         
         if let centerViewData = data["cash"]?.first as? Cash {
             self.centerView.setupImage(imageURL: centerViewData.bannerURL)
+        }
+        
+        if let products = data["products"] as? [Product] {
+            self.productsView.products = products
         }
     }
     
