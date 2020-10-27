@@ -12,6 +12,15 @@ class FullImageCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "FullImageCollectionViewCell"
     
+    lazy var imageViewContainer: UIView = {
+        let obj = UIView()
+        obj.translatesAutoresizingMaskIntoConstraints = false
+        obj.backgroundColor = .white
+        obj.layer.masksToBounds = false
+        
+        return obj
+    }()
+    
     lazy var cellImageView: UIImageView = {
         let obj = UIImageView()
         obj.layer.masksToBounds = true
@@ -23,6 +32,14 @@ class FullImageCollectionViewCell: UICollectionViewCell {
     override func didMoveToSuperview() {
         self.setupConstraints()
         self.backgroundColor = .clear
+        self.setupShadow()
+    }
+    
+    func setupShadow(){
+        self.layer.cornerRadius = 12
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
     }
     
     func config(imageURL: String) {

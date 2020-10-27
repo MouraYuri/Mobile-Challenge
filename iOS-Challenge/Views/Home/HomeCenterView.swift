@@ -28,7 +28,6 @@ class HomeCenterView: UIView {
     override func didMoveToSuperview() {
         self.setupConstraints()
         self.setupViewTitleLabelText()
-        self.backgroundColor = .green
     }
     
     func setupImage(imageURL: String) {

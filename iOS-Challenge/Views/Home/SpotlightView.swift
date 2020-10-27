@@ -37,7 +37,6 @@ class SpotlightView: UIView {
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         self.setupConstraints()
-        self.backgroundColor = .blue
     }
     
     func setupConstraints(){
