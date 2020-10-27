@@ -34,7 +34,7 @@ class FullImageCollectionViewCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             self.cellImageView.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.8),
-            self.cellImageView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.95),
+            self.cellImageView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 1.0),
             self.cellImageView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
             self.cellImageView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
         ])

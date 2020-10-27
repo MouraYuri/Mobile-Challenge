@@ -7,9 +7,9 @@
 
 import Foundation
 struct Cash {
-    let title: String?
-    let bannerURL: String?
-    let description: String?
+    let title: String
+    let bannerURL: String
+    let description: String
     
     init(_ dict: [String:Any]) {
         self.title = dict["name"] as? String ?? "Not Defined"

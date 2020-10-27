@@ -20,7 +20,7 @@ class SpotlightView: UIView {
     lazy var collectionView: UICollectionView = { [unowned self] in
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width*0.8, height: UIScreen.main.bounds.height*0.3)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width*0.8, height: UIScreen.main.bounds.height*0.25)
         layout.scrollDirection = .horizontal
         
         let obj = UICollectionView(frame: self.frame, collectionViewLayout: layout)
