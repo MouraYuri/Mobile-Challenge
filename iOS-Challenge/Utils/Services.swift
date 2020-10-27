@@ -11,7 +11,6 @@ enum RequestMethod: String {
     case get = "GET"
 }
 
-
 class Services {
     
     static let shared = Services()
@@ -19,30 +18,31 @@ class Services {
     private init() {}
     
     func makeRequest(to url: String, method: RequestMethod, completion: @escaping ([String:Any]?, String?) -> Void ) {
+        
         guard let parsedURL = URL(string: url) else {
             return
         }
         
         var request = URLRequest(url: parsedURL)
+        let session = URLSession.shared
+        request.httpMethod = method.rawValue
         
-        request.httpMethod = method
         
-        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { (response, data, error) in
-            
+        session.dataTask(with: request) { (data, response, error) in
             guard let _ = error else {
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
-                        print(json)
+                        completion(json, nil)
                     }
-                } catch let error as NSError {
+                } catch _ as NSError {
                     print("Unable to load data")
                 }
                 return
             }
-        }
+            completion(nil, error.debugDescription)
+            return
+        }.resume()
         
-        
+        request.httpMethod = method.rawValue
     }
-    
-    
 }
