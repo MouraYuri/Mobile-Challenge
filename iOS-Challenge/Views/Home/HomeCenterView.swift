@@ -38,9 +38,11 @@ class HomeCenterView: UIView {
         self.addSubview(self.viewTitleLabel)
         self.addSubview(self.imageView)
         
+        let windowBounds = UIScreen.main.bounds
+        
         NSLayoutConstraint.activate([
             self.viewTitleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
-            self.viewTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8)
+            self.viewTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: windowBounds.width*0.045)
         ])
         
         NSLayoutConstraint.activate([
@@ -52,9 +54,9 @@ class HomeCenterView: UIView {
     }
     
     func setupViewTitleLabelText() {
-        let attrs1 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 22), NSAttributedString.Key.foregroundColor : UIColor.blue]
+        let attrs1 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 22, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor.blue]
 
-        let attrs2 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 22), NSAttributedString.Key.foregroundColor : UIColor.gray]
+        let attrs2 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 22, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor.gray]
 
         let attributedString1 = NSMutableAttributedString(string:"digio", attributes:attrs1)
 

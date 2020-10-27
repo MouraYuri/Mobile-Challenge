@@ -20,15 +20,20 @@ class ProductsView: UIView {
     lazy var viewTitleLabel: UILabel = {
         let obj = UILabel()
         obj.text = "Produtos"
+        obj.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        obj.textColor = .blue
         obj.translatesAutoresizingMaskIntoConstraints = false
         return obj
     }()
     
 
     lazy var collectionView: UICollectionView = { [unowned self] in
+        
+        let windowBounds = UIScreen.main.bounds
+        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width/3.5, height: UIScreen.main.bounds.height*0.15)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: windowBounds.width*0.04, bottom: 0, right: windowBounds.width*0.04)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width/3.2, height: UIScreen.main.bounds.height*0.15)
         layout.scrollDirection = .horizontal
         
         let obj = UICollectionView(frame: self.frame, collectionViewLayout: layout)
@@ -44,22 +49,23 @@ class ProductsView: UIView {
     
     override func didMoveToSuperview() {
         self.setupConstraints()
-        self.backgroundColor = .brown
     }
     
     func setupConstraints(){
         self.addSubview(self.viewTitleLabel)
         self.addSubview(self.collectionView)
         
+        let windowBounds = UIScreen.main.bounds
+        
         NSLayoutConstraint.activate([
-            self.viewTitleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
-            self.viewTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8)
+            self.viewTitleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 32),
+            self.viewTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: windowBounds.width*0.045)
         ])
         
         NSLayoutConstraint.activate([
-            self.collectionView.topAnchor.constraint(equalTo: self.viewTitleLabel.bottomAnchor),
-            self.collectionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.9),
-            self.collectionView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9),
+            self.collectionView.topAnchor.constraint(equalTo: self.viewTitleLabel.bottomAnchor, constant: 2),
+            self.collectionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.6),
+            self.collectionView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.0),
             self.collectionView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
