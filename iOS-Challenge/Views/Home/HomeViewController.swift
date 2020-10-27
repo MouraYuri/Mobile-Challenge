@@ -55,7 +55,7 @@ class HomeViewController: UIViewController {
         self.view.addSubview(self.centerView)
         self.view.addSubview(self.productsView)
         
-        let viewsWidthMultiplier = CGFloat(0.95)
+        let viewsWidthMultiplier = CGFloat(1.0)
         
         NSLayoutConstraint.activate([
             self.spotlightView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),

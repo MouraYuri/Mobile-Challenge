@@ -18,9 +18,12 @@ class SpotlightView: UIView {
     }
     
     lazy var collectionView: UICollectionView = { [unowned self] in
+        
+        let windowBounds = UIScreen.main.bounds
+        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width*0.8, height: UIScreen.main.bounds.height*0.25)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: windowBounds.width*0.04, bottom: 0, right:windowBounds.width*0.04)
+        layout.itemSize = CGSize(width: windowBounds.width*0.85, height: windowBounds.height*0.25)
         layout.scrollDirection = .horizontal
         
         let obj = UICollectionView(frame: self.frame, collectionViewLayout: layout)
@@ -44,7 +47,7 @@ class SpotlightView: UIView {
         
         NSLayoutConstraint.activate([
             self.collectionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.9),
-            self.collectionView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9),
+            self.collectionView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.0),
             self.collectionView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.collectionView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
