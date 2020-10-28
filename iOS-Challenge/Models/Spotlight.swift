@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Spotlight {
+struct Spotlight: Codable {
     let name: String
     let bannerURL: String
     let description: String

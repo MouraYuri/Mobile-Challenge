@@ -90,19 +90,10 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeViewModelDelegate {
-    func didFinishFetching(data: [String : [Any]]) {
-        if let spotlights = data["spotlights"] as? [Spotlight] {
-            self.spotlightView.setSpotlights(spotlights)
-        }
-        
-        if let centerViewData = data["cash"]?.first as? Cash {
-            self.centerView.setupImage(imageURL: centerViewData.bannerURL)
-        }
-        
-        if let products = data["products"] as? [Product] {
-            self.productsView.setProducts(products)
-        }
-        
+    func didFinishFetching(data: HomeResponseData) {
+        self.spotlightView.setSpotlights(data.spotlight)
+        self.centerView.setupImage(imageURL: data.cash.bannerURL)
+        self.productsView.setProducts(data.products)
     }
     
 }

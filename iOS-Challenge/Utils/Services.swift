@@ -18,7 +18,7 @@ class Services {
     
     private init() {}
     
-    func makeRequest(to url: String, method: RequestMethod, completion: @escaping ([String:Any]?, String?) -> Void ) {
+    func makeRequest(to url: String, method: RequestMethod, completion: @escaping (Data?, String?) -> Void ) {
         
         guard let parsedURL = URL(string: url) else {
             return
@@ -31,13 +31,7 @@ class Services {
         
         session.dataTask(with: request) { (data, response, error) in
             guard let _ = error else {
-                do {
-                    if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
-                        completion(json, nil)
-                    }
-                } catch _ as NSError {
-                    print("Unable to load data")
-                }
+                completion(data, nil)
                 return
             }
             completion(nil, error.debugDescription)

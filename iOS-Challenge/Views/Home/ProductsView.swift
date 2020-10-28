@@ -83,7 +83,7 @@ extension ProductsView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as? ProductCollectionViewCell {
             let product = self.products[indexPath.row]
-            cell.config(imageURL: product.bannerURL)
+            cell.config(imageURL: product.imageURL)
             return cell
         } else {
             return UICollectionViewCell()

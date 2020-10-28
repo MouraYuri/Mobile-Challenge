@@ -8,7 +8,7 @@
 import Foundation
 
 protocol HomeViewModelDelegate: class {
-    func didFinishFetching(data: [String:[Any]])
+    func didFinishFetching(data: HomeResponseData)
 }
 
 
@@ -24,52 +24,17 @@ class HomeViewModel {
             guard let self = self else {return}
             guard let _ = error else {
                 if let data = data {
-                    
-                    var retSpotlights: [Spotlight] = []
-                    var retProducts: [Product] = []
-                    var retCash = Cash()
-                    
-                    if let spotlightsDict = data["spotlight"] as? [[String:Any]] {
-                        retSpotlights = self.parseDictToSpotlights(spotlightsDict)
+                    do {
+                        let homeResponseData = try JSONDecoder().decode(HomeResponseData.self, from: data)
+                        self.delegate?.didFinishFetching(data: homeResponseData)
+                    }catch {
+                        print(error.localizedDescription)
                     }
-                    
-                    if let productsDict = data["products"] as? [[String:Any]] {
-                        retProducts = self.parseDictToProducts(productsDict)
-                    }
-                    
-                    if let cashDict = data["cash"] as? [String:Any] {
-                        retCash = Cash(cashDict)
-                    }
-                    
-                    let dataToBeReturned: [String:[Any]] = [
-                                                            "spotlights":retSpotlights,
-                                                            "products":retProducts,
-                                                            "cash":[retCash]
-                                                            ]
-                    
-                    self.delegate?.didFinishFetching(data: dataToBeReturned)
                 }
                 return
             }
             
         }
-    }
-    
-    func parseDictToSpotlights(_ dict: [[String:Any]]) -> [Spotlight] {
-        var spotlights: [Spotlight] = []
-        for element in dict {
-            spotlights.append(Spotlight(element))
-
-        }
-        return spotlights
-    }
-    
-    func parseDictToProducts(_ dict: [[String:Any]]) -> [Product] {
-        var products: [Product] = []
-        for element in dict {
-            products.append(Product(element))
-        }
-        return products
     }
     
 }

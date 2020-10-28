@@ -26,6 +26,7 @@
 		A0508B9F25479063005B7B78 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0508B9E25479063005B7B78 /* HomeViewController.swift */; };
 		A0927BD625490CDC0000D90B /* HeaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0927BD525490CDC0000D90B /* HeaderViewTests.swift */; };
 		A0927BE32549123A0000D90B /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0927BE22549123A0000D90B /* HomeViewModelTests.swift */; };
+		A0927C0125492DD60000D90B /* HomeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0927C0025492DD60000D90B /* HomeResponseData.swift */; };
 		C9763120AC33B8271092002E /* Pods_iOS_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C62DE429DFE960DB25E9BD /* Pods_iOS_Challenge.framework */; };
 		CFC3CEE27758B19D7128FFCA /* Pods_iOS_Challenge_iOS_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5B63BB30FFB5A657181814 /* Pods_iOS_Challenge_iOS_ChallengeUITests.framework */; };
 		DD53000FBF70A5586CD23E90 /* Pods_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 600509A10320C79C5E48EF42 /* Pods_iOS_ChallengeTests.framework */; };
@@ -81,6 +82,7 @@
 		A0508B9E25479063005B7B78 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A0927BD525490CDC0000D90B /* HeaderViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewTests.swift; sourceTree = "<group>"; };
 		A0927BE22549123A0000D90B /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		A0927C0025492DD60000D90B /* HomeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponseData.swift; sourceTree = "<group>"; };
 		EE5B63BB30FFB5A657181814 /* Pods_iOS_Challenge_iOS_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Challenge_iOS_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB17B77F46F612FAE4113FE /* Pods-iOS-Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge/Pods-iOS-Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 				A01C18292547B03D0046F073 /* Spotlight.swift */,
 				A01C182E2547B6A60046F073 /* Product.swift */,
 				A01C18332547B6C20046F073 /* Cash.swift */,
+				A0927C0025492DD60000D90B /* HomeResponseData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				A01C183A2547BEE10046F073 /* SpotlightView.swift in Sources */,
 				A01C181D254794920046F073 /* Services.swift in Sources */,
 				A01C18472547D1C80046F073 /* HomeCenterView.swift in Sources */,
+				A0927C0125492DD60000D90B /* HomeResponseData.swift in Sources */,
 				A01C18512547E4C40046F073 /* ProductCollectionViewCell.swift in Sources */,
 				A0508B5525478E41005B7B78 /* SceneDelegate.swift in Sources */,
 				A01C18342547B6C20046F073 /* Cash.swift in Sources */,
