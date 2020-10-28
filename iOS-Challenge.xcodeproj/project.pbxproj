@@ -22,7 +22,6 @@
 		A0508B5525478E41005B7B78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0508B5425478E41005B7B78 /* SceneDelegate.swift */; };
 		A0508B5C25478E43005B7B78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0508B5B25478E43005B7B78 /* Assets.xcassets */; };
 		A0508B5F25478E43005B7B78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0508B5D25478E43005B7B78 /* LaunchScreen.storyboard */; };
-		A0508B6A25478E43005B7B78 /* iOS_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0508B6925478E43005B7B78 /* iOS_ChallengeTests.swift */; };
 		A0508B7525478E43005B7B78 /* iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0508B7425478E43005B7B78 /* iOS_ChallengeUITests.swift */; };
 		A0508B9F25479063005B7B78 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0508B9E25479063005B7B78 /* HomeViewController.swift */; };
 		A0927BD625490CDC0000D90B /* HeaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0927BD525490CDC0000D90B /* HeaderViewTests.swift */; };
@@ -75,7 +74,6 @@
 		A0508B5E25478E43005B7B78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0508B6025478E43005B7B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0508B6525478E43005B7B78 /* iOS-ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0508B6925478E43005B7B78 /* iOS_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ChallengeTests.swift; sourceTree = "<group>"; };
 		A0508B6B25478E43005B7B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0508B7025478E43005B7B78 /* iOS-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0508B7425478E43005B7B78 /* iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				A0927BD425490CA00000D90B /* HomeTests */,
-				A0508B6925478E43005B7B78 /* iOS_ChallengeTests.swift */,
 				A0508B6B25478E43005B7B78 /* Info.plist */,
 			);
 			path = "iOS-ChallengeTests";
@@ -519,7 +516,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0927BE32549123A0000D90B /* HomeViewModelTests.swift in Sources */,
-				A0508B6A25478E43005B7B78 /* iOS_ChallengeTests.swift in Sources */,
 				A0927BD625490CDC0000D90B /* HeaderViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

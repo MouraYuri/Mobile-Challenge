@@ -74,7 +74,7 @@ class HomeViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             self.centerView.topAnchor.constraint(equalTo: self.spotlightView.bottomAnchor, constant: 8),
-            self.centerView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3),
+            self.centerView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.22),
             self.centerView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: viewsWidthMultiplier),
             self.centerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
