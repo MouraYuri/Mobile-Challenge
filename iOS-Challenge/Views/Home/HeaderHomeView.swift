@@ -12,6 +12,8 @@ class HeaderHomeView: UIView {
     lazy var userImageView: UIImageView = {
         let obj = UIImageView()
         obj.translatesAutoresizingMaskIntoConstraints = false
+        obj.image = UIImage(named: "profile_icon")
+        obj.contentMode = .scaleToFill
         return obj
     }()
     
@@ -36,10 +38,13 @@ class HeaderHomeView: UIView {
         NSLayoutConstraint.activate([
             self.userImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: windowBounds.width*0.045),
             self.userImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: windowBounds.width*0.045),
+            self.userImageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.8),
+            self.userImageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.08)
         ])
         
         NSLayoutConstraint.activate([
-            self.userNameLabel.leadingAnchor.constraint(equalTo: self.userImageView.trailingAnchor, constant: 4),
+            self.userNameLabel.leadingAnchor.constraint(equalTo: self.userImageView.trailingAnchor, constant: 8),
+            self.userNameLabel.centerYAnchor.constraint(equalTo: self.userImageView.centerYAnchor),
             self.userNameLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1.0),
             self.userNameLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4)
         ])
