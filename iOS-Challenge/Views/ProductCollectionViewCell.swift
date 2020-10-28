@@ -20,7 +20,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
         obj.layer.shadowColor = UIColor.black.cgColor
         obj.layer.shadowOpacity = 0.35
         obj.layer.shadowOffset = CGSize(width: 0, height: 2)
-        
         return obj
     }()
     

@@ -17,10 +17,10 @@ class HeaderHomeView: UIView {
         return obj
     }()
     
-    let userNameLabel: UILabel = {
+    lazy var userNameLabel: UILabel = { [unowned self] in
         let obj = UILabel()
         obj.translatesAutoresizingMaskIntoConstraints = false
-        obj.text = "Olá, Maria"
+        obj.text = self.getWelcomeTextForUsername("Maria")
         obj.textColor = .black
         return obj
     }()
@@ -48,6 +48,10 @@ class HeaderHomeView: UIView {
             self.userNameLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1.0),
             self.userNameLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4)
         ])
+    }
+    
+    func getWelcomeTextForUsername(_ username: String) -> String {
+        return "Olá, " + username
     }
 
 }

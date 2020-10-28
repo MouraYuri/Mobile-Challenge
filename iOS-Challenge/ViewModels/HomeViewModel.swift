@@ -20,7 +20,8 @@ class HomeViewModel {
         
         let url = "https://7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com/sandbox/products"
         
-        Services.shared.makeRequest(to: url, method: .get) { (data, error) in
+        Services.shared.makeRequest(to: url, method: .get) { [weak self] (data, error) in
+            guard let self = self else {return}
             guard let _ = error else {
                 if let data = data {
                     

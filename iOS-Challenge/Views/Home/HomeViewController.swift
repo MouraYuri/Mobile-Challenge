@@ -37,11 +37,11 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupConstraints()
-        self.view.backgroundColor = .white
         
+        self.setupConstraints()
         self.viewModel.delegate = self
         
+        self.view.backgroundColor = .white
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -92,7 +92,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewModelDelegate {
     func didFinishFetching(data: [String : [Any]]) {
         if let spotlights = data["spotlights"] as? [Spotlight] {
-            self.spotlightView.spotlights = spotlights
+            self.spotlightView.setSpotlights(spotlights)
         }
         
         if let centerViewData = data["cash"]?.first as? Cash {
@@ -100,9 +100,9 @@ extension HomeViewController: HomeViewModelDelegate {
         }
         
         if let products = data["products"] as? [Product] {
-            self.productsView.products = products
+            self.productsView.setProducts(products)
         }
+        
     }
-    
     
 }

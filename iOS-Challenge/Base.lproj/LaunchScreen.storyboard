@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,15 +14,54 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Challenge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYf-S0-ZTx">
+                                <rect key="frame" x="62" y="430.5" width="290" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="github.com/MouraYuri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aft-m8-A3b">
+                                <rect key="frame" x="104" y="808.5" width="206" height="37.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo(a)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4y-TC-i0J">
+                                <rect key="frame" x="62" y="80" width="290" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XYf-S0-ZTx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0al-V1-S7v"/>
+                            <constraint firstItem="X4y-TC-i0J" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.0479911" id="4Je-mh-H8I"/>
+                            <constraint firstItem="X4y-TC-i0J" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" id="4db-tA-8MB"/>
+                            <constraint firstItem="XYf-S0-ZTx" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.05" id="8V1-8K-hj8"/>
+                            <constraint firstItem="Aft-m8-A3b" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="H6N-Bf-3OU"/>
+                            <constraint firstItem="XYf-S0-ZTx" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" id="XBa-Nv-ERN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Aft-m8-A3b" secondAttribute="bottom" constant="16" id="XlE-mk-oPk"/>
+                            <constraint firstItem="X4y-TC-i0J" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cLU-To-y8t"/>
+                            <constraint firstItem="X4y-TC-i0J" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="80" id="dOL-Yg-QUz"/>
+                            <constraint firstItem="XYf-S0-ZTx" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jEE-xf-hUW"/>
+                            <constraint firstItem="Aft-m8-A3b" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.496875" id="uRe-o6-SWB"/>
+                            <constraint firstItem="Aft-m8-A3b" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.0416667" id="v1J-Ez-s2f"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

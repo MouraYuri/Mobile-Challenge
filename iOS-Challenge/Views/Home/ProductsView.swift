@@ -70,6 +70,9 @@ class ProductsView: UIView {
         ])
     }
 
+    func setProducts(_ products: [Product]) {
+        self.products = products
+    }
 }
 
 extension ProductsView: UICollectionViewDelegate, UICollectionViewDataSource {

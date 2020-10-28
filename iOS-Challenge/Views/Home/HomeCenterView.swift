@@ -9,10 +9,10 @@ import UIKit
 
 class HomeCenterView: UIView {
 
-    lazy var viewTitleLabel: UILabel = {
+    lazy var viewTitleLabel: UILabel = { [unowned self] in
         let obj = UILabel()
         obj.translatesAutoresizingMaskIntoConstraints = false
-        obj.text = "digio cash"
+        obj.attributedText = self.getAttributedTextForViewTitleLabel(string1: "digio", string2: " Cash")
         return obj
     }()
     
@@ -27,7 +27,6 @@ class HomeCenterView: UIView {
     
     override func didMoveToSuperview() {
         self.setupConstraints()
-        self.setupViewTitleLabelText()
     }
     
     func setupImage(imageURL: String) {
@@ -53,17 +52,17 @@ class HomeCenterView: UIView {
         ])
     }
     
-    func setupViewTitleLabelText() {
+    func getAttributedTextForViewTitleLabel(string1: String, string2: String) -> NSMutableAttributedString {
         let attrs1 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 22, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor.blue]
 
         let attrs2 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 22, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor.gray]
 
-        let attributedString1 = NSMutableAttributedString(string:"digio", attributes:attrs1)
+        let attributedString1 = NSMutableAttributedString(string:string1, attributes:attrs1)
 
-        let attributedString2 = NSMutableAttributedString(string:" Cash", attributes:attrs2)
+        let attributedString2 = NSMutableAttributedString(string:string2, attributes:attrs2)
 
         attributedString1.append(attributedString2)
-        self.viewTitleLabel.attributedText = attributedString1
+        return attributedString1
     }
 
 }

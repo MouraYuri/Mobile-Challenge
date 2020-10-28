@@ -18,7 +18,6 @@ class SpotlightView: UIView {
     }
     
     lazy var collectionView: UICollectionView = { [unowned self] in
-        
         let windowBounds = UIScreen.main.bounds
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -52,6 +51,10 @@ class SpotlightView: UIView {
             self.collectionView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
         
+    }
+    
+    func setSpotlights(_ spotlights: [Spotlight]) {
+        self.spotlights = spotlights
     }
 
 }
