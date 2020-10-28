@@ -20,7 +20,7 @@ class HeaderViewTests: XCTestCase {
         sut = nil
     }
 
-    func testWelcomeTestForUsername() {
+    func testWelcomeTextForUsername() {
         let username = "Fernando"
         let welcomeText = sut.getWelcomeTextForUsername(username)
         
